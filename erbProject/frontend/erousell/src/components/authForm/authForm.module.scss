@@ -1,0 +1,173 @@
+@use '../../styles/mixin.scss' as mixin;
+
+.loginCard :global(.css-19285mc-MuiFormLabel-root-MuiInputLabel-root) {
+  // color: #DBC29A !important;
+  color: mixin.$primaryBlack !important;
+}
+
+.loginCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginCard :global(.css-hjtp1-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline),
+.loginCard :global(.css-ndxio3-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline) {
+  // border-color: #DBC29A !important;
+  border: 1px solid mixin.$primaryGreen !important;
+  box-shadow: 0 0 0 4px #cce9e4;
+}
+
+.loginCard :global(.css-ndxio3-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused:hover .MuiOutlinedInput-notchedOutline),
+.loginCard :global(.css-hjtp1-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused:hover .MuiOutlinedInput-notchedOutline) {
+  border: 1px solid mixin.$primaryGreen !important;
+}
+
+.loginCard :global(.css-19285mc-MuiFormLabel-root-MuiInputLabel-root.Mui-focused) {
+  // color: #DBC29A !important;
+  color: mixin.$primaryGrey!important;
+  background: #FFF;
+  padding: 0px 5px;
+}
+
+.loginCard :global(.css-ndxio3-MuiInputBase-root-MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline),
+.loginCard :global(.css-hjtp1-MuiInputBase-root-MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline) {
+  // border-color: #8f6446 !important;
+  border-color: mixin.$primaryGrey !important;
+}
+
+.loginCard :global(.css-ndxio3-MuiInputBase-root-MuiOutlinedInput-root),
+.loginCard :global(.css-hjtp1-MuiInputBase-root-MuiOutlinedInput-root) {
+  height: 44px;
+}
+
+.fieldsContainer {
+  flex-direction: column !important;
+}
+
+.submitBtn {
+  margin-top: 28px !important;
+  padding-top: 0px !important;
+
+  .submit {
+    // background-color: #DBC29A !important;
+    background-color: mixin.$primaryGreen !important;
+    height: 40px !important;
+    &:hover {
+      background: mixin.$secondaryGreen !important;
+    }
+    &:global(.css-1fu7jd5-MuiButtonBase-root-MuiButton-root.Mui-disabled) {
+      color: #FFF !important;
+      cursor: not-allowed !important;
+      background: mixin.$primaryDisable !important;
+
+    }
+  }
+
+}
+
+.passwordIcon {
+  // fill: #DBC29A !important;
+  fill: mixin.$primaryBlack !important;
+
+}
+
+.loginCard :global(.MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated.MuiInputLabel-sizeSmall.MuiInputLabel-outlined.MuiFormLabel-colorSecondary.css-bk59fv-MuiFormLabel-root-MuiInputLabel-root) {
+  // color: #DBC29A;
+  color: mixin.$primaryBlack !important;
+
+}
+
+.loginCard :global(.MuiOutlinedInput-notchedOutline.css-1d3z3hw-MuiOutlinedInput-notchedOutline) {
+  // border-color: #DBC29A;
+  border-color: mixin.$primaryBlack !important;
+}
+
+.otherSection {
+  flex-direction: column !important;
+  /* justify-content: space-between; */
+  margin-top: 10px;
+}
+
+.otherSection a,
+.termsAndPrivacy a {
+  color: rgb(102, 178, 255);
+}
+
+.otherSection a:nth-child(2) {
+  margin-left: 5px;
+}
+
+.otherSection span {
+  font-weight: 600;
+}
+
+.checkBoxContainer {
+  /* margin-top: 16px */
+  // color: #6F4E37;
+  color: mixin.$primaryGreen;
+}
+
+.checkBox {
+  // color:#6F4E37 !important;
+  color: mixin.$primaryGreen!important;
+}
+
+.redirectRegister {
+  // color: #6F4E37;
+  color: mixin.$primaryBlack;
+  text-align: center;
+  padding-top: 16px;
+  
+  a {
+    font-size: mixin.$secondaryFontSize;
+    color: mixin.$secondaryGreen;
+    font-weight: mixin.$secondaryFontWeight;
+  }
+}
+
+.termsAndPrivacy :global(.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root){
+  padding: 0px;
+  margin-right: 5px;
+}
+
+.termsAndPrivacy {
+  padding-top: 16px;
+  align-items: center;
+  display: flex;
+}
+
+.forgotPwContainer {
+  padding: 0 !important;
+  margin-top: 4px !important;
+}
+
+.forgotPw {
+  color: mixin.$primaryBlack;
+  &:hover {
+    text-decoration: underline;
+    color: mixin.$primaryGreen;
+  }
+}
+
+.registerTerms {
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+
+  a {
+    text-decoration: underline;
+    color: mixin.$primaryBlack
+  }
+}
+
+.redirect {
+  margin: 16px 0px;
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+.err {
+  color: mixin.$primaryRed;
+}

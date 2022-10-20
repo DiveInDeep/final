@@ -1,0 +1,103 @@
+@use '../../styles/mixin.scss' as mixin;
+
+.container {
+  display: flex;
+  margin: 16px 0;
+}
+
+.LeftContainer {
+  padding: 24px;
+  width: 40%;
+  // flex: 1;
+  box-shadow: 0 3px 10px 0 rgba(44,44,45,.07),inset 0 0 0 1px rgba(44,44,45,.07);
+  border-radius: 8px;
+}
+
+.wrapper {
+
+}
+
+
+.uploadContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // width: 100%;
+  padding: 32px;
+  background: #cce9e4;
+  border: 1px dashed #008f79;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.imgContainer {
+  position: relative;
+  width: 33%;
+  background-color: #f0f1f1;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px;
+ 
+  .close {
+    position: absolute;
+    right: 0px;
+    top: 2px;
+    z-index: 2;
+    cursor: pointer;
+  }
+  .img {
+    width: 100%
+  }
+}
+
+.allImgWrapper {
+  display: flex;
+  margin: 16px 0;
+}
+
+.cover {
+  padding-top: 4px;
+  color: #fff;
+  text-align: center;
+  background: #000;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  padding-bottom: 6px;
+  position: relative;
+  &:after {
+    content: 'Cover';
+    color: #fff;
+    position: absolute;
+    background: #000;
+    width: 100%;
+    border-radius: 4px 4px 0px 0px;
+    padding-top: 4px;
+    top: -24px;
+  }
+}
+
+.tips {
+  display: flex;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  align-items: center ;
+}
+
+.rightContainer {
+  padding: 24px;
+  box-shadow: 0 0 20px rgb(44 44 45 / 7%), 0 4px 12px rgb(44 44 45 / 7%);
+  border-radius: 8px;
+  flex: 1;
+  margin-left : 24px;
+}
+
+.rightSection {
+  // flex: 1;
+  width: 60%;
+  :global(.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root.Mui-focused .MuiOutlinedInput-notchedOutline) {
+    border: 1px solid #008f79 !important;
+  }
+}
+

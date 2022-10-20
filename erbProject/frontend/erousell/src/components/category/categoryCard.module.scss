@@ -1,0 +1,44 @@
+@use '../../styles/mixin.scss' as mixin;
+
+.container {
+  width: 121px;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 96px;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  transition: background-color .3s ease-out;
+
+  &::before {
+    position: absolute;
+    top: -8px;
+    left: auto;
+    width: 88px;
+    height: 88px;
+    content: "";
+    border-radius: 50%;
+  }
+  &:hover::before {
+    background-color: rgba(44,44,45,.07);
+  }
+  &:hover {
+    img {
+      transform: translateY(-4px);
+    }
+  }
+}
+
+.imgWrapper {
+  
+  img {
+    width: 80px;
+    height: 80px;
+    padding: 4px;
+    transition: transform .3s ease-out;
+  }
+}

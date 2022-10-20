@@ -1,0 +1,57 @@
+.navbar {
+  height: 104px;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 2;
+}
+
+.container {
+  display: flex !important;
+  height: var(--nav-height) !important;
+  background-color: var(--nav-color) !important;
+}
+
+.logoContainer {
+  display: flex;
+  align-self: center;
+  position: relative;
+}
+
+.logoWrapper {
+  width: 20px;
+  height: 20px;
+  background-color: #FFF;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoWrapper::after {
+  content: "";
+  width: 6px;
+  height: 2px;
+  background: #FFF;
+  position: absolute;
+  top: -1px;
+  left: 12px;
+  border-radius: 1px 1px 0px 0px;
+}
+
+.logo {
+  color: #000000;
+  width: 18px !important;
+}
+
+.pipeline {
+  width: 16px;
+  height: 16px;
+  border-right: 1px solid var(--main-grey);
+  align-self: center;
+}
+
+.wrapper {
+  background-color: var(--nav-color);
+}

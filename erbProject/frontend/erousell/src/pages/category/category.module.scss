@@ -1,0 +1,32 @@
+@use '../../styles/mixin.scss' as mixin;
+.sellTitle {
+  font-weight: mixin.$secondaryFontWeight;
+  font-size: mixin.$tertiaryFontSize;
+  line-height: mixin.$secondaryLineHeight;
+  color: mixin.$primaryBlack;
+}
+
+.header {
+  position: fixed;
+  display: flex !important;
+  align-items: center !important;
+  width: 100%;
+  height: 64px;
+  box-shadow: inset 0 -1px 0 0 #f0f1f1;
+  background: #FFF !important;
+  z-index: 2;
+}
+
+.container {
+  margin-top: 64px;
+}
+
+.noRecordContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.noRecordImg {
+  width: 200px;
+}

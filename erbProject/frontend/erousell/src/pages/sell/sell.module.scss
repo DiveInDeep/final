@@ -1,0 +1,39 @@
+@use '../../styles/mixin.scss' as mixin;
+
+.container {
+
+  .wrapper {
+    margin-top: 24px;
+    
+  }
+}
+
+.uploadContainer {
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 32px;
+  background: #cce9e4;
+  border: 1px dashed #008f79;
+  border-radius: 4px;
+  cursor: pointer;
+
+  svg {
+    height: 32px;
+    width: 32px;
+    fill: mixin.$primaryGreen;
+  }
+
+  .btnIcon {
+    margin: 8px 0px;
+    color: #FFF;
+    background: mixin.$primaryGreen;
+    font-size: mixin.$secondaryFontSize;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: mixin.$secondaryFontWeight;
+  }
+}

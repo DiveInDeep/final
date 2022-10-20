@@ -1,0 +1,126 @@
+@use '../../styles/mixin.scss' as mixin;
+
+.carouselContainer {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.bannerImg {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.contentWrapper {
+  // display: flex;
+}
+
+.titleHeader {
+  border-bottom: 1px solid #f0f1f1;
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+  flex: 1;
+}
+
+.title {
+  margin-bottom: 8px;
+  font-size: 24px;
+  line-height: 32px;
+  color:  #2c2c2d;
+  font-weight: 400;
+}
+
+.getChat {
+  margin-left: 24px;
+  flex: 1;
+  padding: 20px 24px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px 0 rgba(44,44,45,.07),inset 0 0 0 1px rgba(44,44,45,.07);
+  width: 340px;
+  height: 200px;
+}
+
+.meetSeller {
+
+}
+
+.meetTitle {
+  display: flex;
+  // align-items: center;
+  position: relative;
+  flex-direction: column;
+  // justify-content: center;
+}
+
+.meetP {
+  display: inline-block;
+padding-right: 28px;
+margin-bottom: 32px;
+font-size: 24px;
+line-height: 32px;
+background-color: #fff;
+flex: 1;
+z-index:1;
+width: 50%;
+}
+
+.contentWrapper {
+display: flex;
+}
+
+.messageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.userIcon {
+  border: 4px solid #fff;
+  width: 160px;
+  height: 160px;
+  background: mixin.$typeCardBg;
+  border-radius: 50%;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  top: 0px;
+  
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    &::after {
+      display: block;
+      padding-top: 100%;
+      content: "";
+    }
+  }
+}
+
+.iconWrapper {
+  display: flex;
+}
+
+.userInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.submit {
+  margin-top: 36px !important;
+  color: #fff;
+  background-color: #ff2636 !important;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  outline: none;
+  font-weight: 600;
+  line-height: 1.5;
+  &:hover {
+    background-color: #cc1e2b !important;
+  }
+}

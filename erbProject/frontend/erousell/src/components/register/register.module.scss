@@ -1,0 +1,79 @@
+@use '../../styles/mixin.scss' as mixin;
+
+.container {
+  width: 460px;
+  min-width: 300px;
+  background: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 8px 13px 0 rgba(44,44,45,.27);
+  padding: 24px;
+  // height: 456px;
+  &:focus-visible {
+    outline: none !important;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    .wrapper {
+      display: flex;
+    }
+    .close {
+      cursor: pointer;
+    }
+  }
+
+  .logoTitle {
+    font-size: 25px;
+    font-family: 'Alkalami', serif;
+    color: var(--level-one-grey);
+    font-weight: 800;
+    margin-left: 5px;
+    height: 36px;
+    letter-spacing: 2px;
+  }
+  
+}
+
+.modalContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  .btnImg {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+  }
+
+  .facebookBtn {
+    background: mixin.$facebookBtn;
+    width: 100%;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: mixin.$secondaryFontWeight;
+    &:hover {
+      background: mixin.$facebookBtn;
+    }
+  }
+}
+
+.divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px 0;
+  span {
+    &:nth-child(1), &:nth-child(3) {
+      width: 12px;
+      height: 1px;
+      background: #f0f1f1;
+    }
+    &:nth-child(2) {
+      text-transform: uppercase;
+      padding: 0 12px
+    }
+  }
+}

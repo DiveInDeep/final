@@ -1,0 +1,108 @@
+@use '../../styles/mixin.scss' as mixin;
+
+.banner {
+  height: 128px;
+  background: mixin.$primaryRed;
+  background-image: url(https://mweb-cdn.karousell.com/build/profile-bg-1hcJPlrNW6.jpg);
+  background-repeat: repeat;
+  background-size: 50%;
+}
+
+.content {
+  .userDetails, .verified {
+    font-size: mixin.$primaryFontSize;
+    line-height: mixin.$primaryLineHeight;
+    color: mixin.$primaryGrey;
+    display: flex;
+    
+    span:nth-child(1) {
+      margin-right: 10px;
+    }
+
+    span:nth-child(2) {
+      margin-left: 10px;
+    }
+  }
+}
+
+.verified {
+  margin-top: 8px;
+}
+
+.tabContainer {
+  display: flex;
+  border-bottom: 1px solid mixin.$typeCardBg;
+}
+
+.userInfo {
+  margin-top: -112px;
+  min-width: 324px;
+}
+
+.userIcon {
+  border: 4px solid #fff;
+  width: 160px;
+  height: 160px;
+  background: mixin.$typeCardBg;
+  border-radius: 50%;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  top: 0px;
+  
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    &::after {
+      display: block;
+      padding-top: 100%;
+      content: "";
+    }
+  }
+}
+
+.userName {
+  font-size: 30px;
+  line-height: mixin.$tertiaryLineHeight;
+  font-weight: mixin.$primaryFontWeight;
+  margin: 0px;
+  color: mixin.$primaryBlack;
+}
+
+.contentWrapper {
+  display: flex;
+}
+
+.tabPanelContainer {
+  flex: 1;
+}
+
+.tabPanelCard {
+  margin-top: 24px;
+  border-radius: 8px;
+  padding-bottom: 16px;
+  width: 100%;
+  box-shadow: 0 3px 10px 0 rgba(44,44,45,.07),inset 0 0 0 1px rgba(44,44,45,.07);
+  .cardTitle {
+    padding: 24px;
+    font-size: mixin.$tertiaryFontSize;
+    line-height: mixin.$secondaryLineHeight;
+    font-weight: mixin.$secondaryFontWeight;
+    color: mixin.$primaryBlack;
+  }
+  .cardContent {
+    min-height: 40px;
+    padding: 24px;
+  }
+}
+
+.btn {
+  &:hover {
+    background: mixin.$secondaryGreen !important;
+  }
+}

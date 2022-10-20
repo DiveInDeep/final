@@ -1,0 +1,46 @@
+.carouselContainer {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.bannerImg {
+  width: 100%;
+  border-radius: 8px;
+}
+
+:global(.dHQcjo) {
+  left: -25px !important;
+}
+
+:global(.aoTUt) {
+  right: -25px !important;
+}
+
+.advertisementBanner {
+  background-image: url("https://storage.googleapis.com/carousell-sl/homescreens/main/carousell_qrcode_background.png")
+}
+
+.advertisementWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+}
+
+.adImgContainer {
+display: flex;
+align-items: center;
+width: 60%;
+}
+
+.adImgWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-right: 16px;
+}
+
+.qrcodeWrapper {
+  background-color: #FFF;
+  padding: 16px;
+  border-radius: 8px;
+}

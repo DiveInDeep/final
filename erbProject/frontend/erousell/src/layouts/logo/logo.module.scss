@@ -1,0 +1,28 @@
+@use '../../styles/mixin.scss' as mixin;
+
+.logoWrapper {
+  width: 36px;
+  height: 36px;
+  background-color: var(--level-one-red);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  position: relative;
+  margin: 0;
+}
+
+.logoWrapper::after {
+  content:"";
+  width: 8px;
+  height: 4px;
+  background-color: var(--level-one-red);
+  position: absolute;
+  top: -3px;
+  left: 24px;
+  border-radius: 2px 2px 0px 0px;
+}
+
+.logoWrapper>svg {
+  color: #FFF;
+}

@@ -1,0 +1,96 @@
+@use '../../styles/mixin.scss' as mixin;
+
+.cardContainer {
+  margin: 0 4px 16px;
+  border-radius: 4px;
+}
+
+.cardWrapper {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  flex-shrink: 0;
+  justify-content: space-between;
+  height: 100%;
+  padding: 8px;
+  transition: transform .4s cubic-bezier(.4,0,.2,1);
+  border-radius: 4px;
+  &:hover {
+    box-shadow: 0 4px 12px 0 rgb(44 44 45 / 7%), 0 0 20px 0 rgb(44 44 45 / 7%);
+  }
+}
+
+.cardTitle {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+.userName {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+  color: mixin.$primaryBlack;
+}
+
+.time {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 400;
+  color: mixin.$primaryGrey;
+}
+
+.itemImgContainer {
+  margin-bottom: 8px;
+  img {
+    width: 100%;
+    border-radius: 4px;
+  }
+}
+
+.infoWrapper {
+  flex: 1;
+}
+
+.like {
+  display: flex;
+}
+
+.heart {
+  margin-right: 4px;
+  width: 16px !important;
+}
+
+.likeNum {
+  font-size: 14px;
+}
+
+.productStatus {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: mixin.$primaryGrey;
+}
+
+.productPrice {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: mixin.$primaryBlack;
+}
+
+.productTitle {
+  --max-line: 2;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: mixin.$primaryGrey;
+}
+
+

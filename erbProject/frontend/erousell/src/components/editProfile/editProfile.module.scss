@@ -1,0 +1,104 @@
+@use '../../styles/mixin.scss' as mixin;
+.imgWrapper {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  img {
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+.card {
+  padding: 32px 40px;
+  box-shadow: 0 3px 10px 0 rgba(44,44,45,.07),inset 0 0 0 1px rgba(44,44,45,.07) !important;
+  border-radius: 8px !important;
+}
+
+.inputFieldContainer {
+  display: flex !important;
+  flex-direction: column !important;
+  margin-bottom: 32px;
+}
+
+.infoTitle {
+  margin: 32px 0 16px;
+  font-size: mixin.$tertiaryFontSize;
+  line-height: mixin.$secondaryLineHeight;
+  font-weight: mixin.$secondaryFontWeight;
+}
+
+
+.inputField {
+  margin-bottom: 24px !important;
+  :global(.MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated.MuiInputLabel-sizeSmall.MuiInputLabel-outlined.MuiFormLabel-colorSecondary.css-bk59fv-MuiFormLabel-root-MuiInputLabel-root) {
+  color: mixin.$primaryBlack !important;
+  }
+
+  :global(.MuiOutlinedInput-notchedOutline.css-1d3z3hw-MuiOutlinedInput-notchedOutline) {
+  border-color: mixin.$primaryBlack !important;
+  }
+
+  :global(.css-19285mc-MuiFormLabel-root-MuiInputLabel-root) {
+    color: mixin.$primaryBlack !important;
+  }
+
+  :global(.css-hjtp1-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline),
+  :global(.css-ndxio3-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline) {
+  border: 1px solid mixin.$primaryGreen !important;
+  box-shadow: 0 0 0 4px #cce9e4;
+  }
+
+  :global(.css-ndxio3-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused:hover .MuiOutlinedInput-notchedOutline),
+  :global(.css-hjtp1-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused:hover .MuiOutlinedInput-notchedOutline) {
+    border: 1px solid mixin.$primaryGreen !important;
+  }
+
+  :global(.css-19285mc-MuiFormLabel-root-MuiInputLabel-root.Mui-focused) {
+    color: mixin.$primaryGrey!important;
+    background: #FFF;
+    padding: 0px 5px;
+  }
+
+  :global(.css-ndxio3-MuiInputBase-root-MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline),
+  :global(.css-hjtp1-MuiInputBase-root-MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline) {
+    border-color: mixin.$primaryGrey !important;
+  }
+
+  :global(.css-ndxio3-MuiInputBase-root-MuiOutlinedInput-root),
+  :global(.css-hjtp1-MuiInputBase-root-MuiOutlinedInput-root) {
+    height: 44px;
+  }
+
+}
+
+.desc {
+  display: flex;
+  align-items: center;
+}
+
+.dashLine { 
+  margin: 0px 0 24px;
+  border-top: 1px solid rgba(44,44,45,.07);
+  
+}
+
+.submitBtn {
+  margin-top: 28px !important;
+  padding-top: 0px !important;
+  .submit {
+    // background-color: #DBC29A !important;
+    background-color: mixin.$primaryGreen !important;
+    height: 40px !important;
+    &:hover {
+      background: mixin.$secondaryGreen !important;
+    }
+    &:global(.css-1fu7jd5-MuiButtonBase-root-MuiButton-root.Mui-disabled) {
+      color: #FFF !important;
+      cursor: not-allowed !important;
+      background: mixin.$primaryDisable !important;
+
+    }
+  }
+
+}
