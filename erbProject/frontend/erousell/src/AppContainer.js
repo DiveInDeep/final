@@ -27,9 +27,8 @@ function AppContainer () {
       Main.setAccessToken(`Bearer ${userInfo?.accessToken}`)
       Main.setUserId(userInfo.userId);
 
-      let acc = Main.getAccessToken()
-      let uid = Main.getUserId();
-      console.log({acc, uid});
+      // let acc = Main.getAccessToken()
+      // let uid = Main.getUserId();
       dispatch(setAuth(true));
       dispatch(setUser(userInfo))
   }

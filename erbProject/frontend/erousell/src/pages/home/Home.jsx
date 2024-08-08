@@ -33,17 +33,8 @@ const Home = () => {
 
   useEffect(() => {
     if (!auth) return;
-    test();
   }, [auth])
 
-  async function test() {
-    try {
-      let resp = await Service.call('get', '/qq')
-      console.log(resp)
-    } catch(err) {
-      console.log(err);
-    }
-  }
 
   return (
       <AppLayout>
