@@ -37,12 +37,6 @@ app.use("/users", usersRoute);
 app.use("/items", itemsRoute);
 app.use("/messages", messagesRoute)
 
-
-app.get('/qq', (req, res) => {
-	console.log("re?", req.user)
-	res.send('passed')
-})
-
 app.listen(8081, () => {
   console.log(`server started on port ${process.env.PORT}!`)
 })
