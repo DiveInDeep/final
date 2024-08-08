@@ -40,7 +40,7 @@ async function call(_method, _endPoint, _postObj = {}) {
 
 async function upload(_method, _endPoint, _postObj = {}) {
   try {
-    let baseURL = process.env.REACT_APP_URL;
+    let baseURL = "http://127.0.0.1:8081";
     let method = _.toString(_method).toLowerCase();
     let postObj = _.clone(_postObj) || {};
     let endpoint = _.toString(_endPoint);

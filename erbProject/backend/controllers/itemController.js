@@ -10,7 +10,7 @@ import jwt from 'jsonwebtoken';
 const storageSetting = multer.diskStorage({
     destination : (req, file, cb) =>{
 			console.log("here")
-        cb(null, "../frontend/erousell/public/upload")
+        cb(null, "./uploads")
 				
     },
     filename: (req, file, cb) =>{
