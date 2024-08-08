@@ -100,6 +100,7 @@ const AuthMenu = (props) => {
               open={Boolean(anchorEl)}
               onClose={handleClose}
               MenuListProps={{ onMouseLeave: handleClose }}
+              disableScrollLock={true}
             >
               {_.map(popoverMenu, (item, index) => {
                 return (
