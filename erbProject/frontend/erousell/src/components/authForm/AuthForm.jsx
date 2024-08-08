@@ -37,7 +37,6 @@ const AuthForm = (props) => {
     validLength,
     validPassword,
     error,
-    setOpen,
     setIsRegisterOpen,
     setIsLoginOpen,
   } = props;
@@ -193,7 +192,7 @@ const AuthForm = (props) => {
             <div
               style={{ cursor: "pointer" }}
               onClick={() => {
-                setOpen(false);
+                setIsLoginOpen(false);
                 setIsRegisterOpen(true);
               }}
             >
@@ -209,7 +208,7 @@ const AuthForm = (props) => {
             <div
               style={{ cursor: "pointer" }}
               onClick={() => {
-                setOpen(false);
+                setIsRegisterOpen(false);
                 setIsLoginOpen(true);
               }}
             >

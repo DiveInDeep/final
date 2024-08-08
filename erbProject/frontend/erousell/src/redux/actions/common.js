@@ -15,3 +15,17 @@ export function setAuth(state) {
   };
 }
 
+export function setLoginOpen(state) {
+  return {
+    type: types.SET_LOGIN_OPEN,
+    data: state
+  }
+}
+
+export function setRegisterOpen(state) {
+  return {
+    type: types.SET_REGISTER_OPEN,
+    data: state
+  }
+}
+

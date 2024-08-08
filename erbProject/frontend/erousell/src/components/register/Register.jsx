@@ -96,7 +96,7 @@ const Register =(props)=> {
           <CloseIcon className={styles.close} onClick={handleOpen}/>
         </header>
         <div className={styles.content}>
-          <Button className={styles.facebookBtn}>
+          {/* <Button className={styles.facebookBtn}>
             <img src="https://mweb-cdn.karousell.com/build/fb-icon-3NjbluDsCk.svg" alt="facebook_icon" className={styles.btnImg}/>
             Log in with Facebook
           </Button>
@@ -104,7 +104,7 @@ const Register =(props)=> {
             <span></span>
             <span>or</span>
             <span></span>
-          </div>
+          </div> */}
           <AuthForm
             type='register'
             handleSubmit={handleSubmit}
@@ -113,7 +113,7 @@ const Register =(props)=> {
             validPassword={validPassword}
             validLength={validLength}
             setIsRegisterOpen={setIsRegisterOpen}
-            setLoginOpen={setIsLoginOpen}
+            setIsLoginOpen={setIsLoginOpen}
           />
           
         </div>
