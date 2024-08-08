@@ -74,7 +74,7 @@ const Profile = () => {
           <div className={styles.tabContainer}>
             <div style={{minWidth: '324px'}}></div>
             <Tabs value={activeTab} onChange={handleChange} aria-label="own-item-status">
-              <Tab label="Item One" {...a11yProps(0)}/>
+              <Tab label="Item" {...a11yProps(0)}/>
               {/* <Tab label="Item Two" {...a11yProps(1)}/>
               <Tab label="Item Three" {...a11yProps(2)}/> */}
             </Tabs>
@@ -112,16 +112,15 @@ const Profile = () => {
                   <div className={styles.cardContent}>
                     {
                       _.map(items, (item, index) => {
-                        console.log('item', item);
                       return (
-                          <div style={{display: "flex"}}>
+                          <div style={{display: "flex", marginTop: index === 0 ? 0 : 12}} key={`each_card_${index}`}>
                             <div style={{width:'50%', margin: '8px 0px'}}>
                               <ItemCards  id={item._id} item={item}/>
                             </div>
                             <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', marginLeft: '10px'}}>
                               {_.map(config, (status, index) => {
                                 return (
-                                  <Button className={styles.btn} onClick={() => statusChange(item._id, status)} sx={{background: "#008f79", color: '#FFF', margin: '4px 0px'}}>
+                                  <Button className={styles.btn} onClick={() => statusChange(item._id, status)} sx={{background: "#008f79", color: '#FFF', margin: '4px 0px'}} key={`each_button_${index}`}>
                                     {status}
                                   </Button>
                                 )

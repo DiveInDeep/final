@@ -4,7 +4,7 @@ import { Container } from "@mui/material";
 import styles from "./category.module.scss";
 import { useLocation } from "react-router-dom";
 import * as service from "../../core/Service";
-import _ from "lodash";
+import _, { filter } from "lodash";
 import ItemCards from "../../components/itemCards";
 import { tagObj } from "../../helpers/enumConfig";
 
@@ -25,7 +25,8 @@ const Category = () => {
       if (!resp) {
         return;
       }
-      setResult(resp.items);
+      const filteredResult = resp.items.filter(item => (item.status !== "HIDDEN" && item.status !== "CLOSED" ))
+      setResult(filteredResult);
     } catch (err) {
       console.error(err);
     }
@@ -48,10 +49,6 @@ const Category = () => {
         >
           {!_.isEmpty(result) ? (
             _.map(result, (item, index) => {
-              console.log("this is item", item._id);
-              // const { _id, seller } = item;
-              console.log("foreach", item);
-              if (item.status === "HIDDEN" || item.status === "CLOSED") return;
               return (
                 <div
                   style={{ width: "25%" }}
@@ -60,8 +57,6 @@ const Category = () => {
                   <ItemCards
                     id={item._id}
                     item={item}
-                    test={true}
-                    i={item.imagePath}
                   />
                 </div>
               );

@@ -43,14 +43,14 @@ const Product = () => {
     try {
       let resp = await service.call('get', `items/${newId}` ) 
       const { item } = resp; 
-      const { imagePath} = item
+      console.log(item, "??")
       setResult(item);
-      setImage(item.imagePath)
+      setImage(item.img)
       setName(item.name)
       setTitle(item.title)
       setStatus(item.status)
       setDate(item.date)
-      console.log("item", item.imagePath  )
+    
     }catch(err) {
       console.log(err);
     }
@@ -77,7 +77,7 @@ const Product = () => {
                   )
                 })
               } */}
-              <img src={`./upload/${image}`} alt="test" className={styles.bannerImg}/>
+              <img src={image} alt="test" className={styles.bannerImg}/>
 
           </ItemsCarousel>
         </div>
@@ -93,11 +93,14 @@ const Product = () => {
                 <div>
                   Status: {status}
                 </div>
+                <div>
+                  Category: {result?.tag || "-"}
+                </div>
             </div>
             
             <div className={styles.meetSeller}>
               <div className={styles.meetTitle}>
-                <span className={styles.meetP}>Meet ths seller</span>
+                <span className={styles.meetP}>Meet the seller</span>
                 <div className={styles.iconWrapper}>
                   <div className={styles.userIcon}>
                     <img src="https://media.karousell.com/media/photos/profiles/default.png" alt="user_icon"/>

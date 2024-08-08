@@ -16,9 +16,10 @@ const RecommendedGoods = () => {
   async function fetchAllItem() {
     try {
       let resp = await service.call('get', '/items/records/all');
-      const { success, records } = resp;
+      const { success, data } = resp;
       if (success) {
-        setResult(records);
+        console.log("data recommended", data)
+        setResult(data);
       }
 
     } catch (error) {
