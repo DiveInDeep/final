@@ -32,10 +32,6 @@ const Product = () => {
   let newId = location.search.split("?")[1];
 
   useEffect(() => {
-    console.log("ad",newId)
-  }, [location])
-
-  useEffect(() => {
     fetchResult()
   }, [])
 
@@ -46,7 +42,6 @@ const Product = () => {
   async function fetchResult () {
     try {
       let resp = await service.call('get', `items/${newId}` ) 
-      console.log("re", resp)
       const { item } = resp; 
       const { imagePath} = item
       setResult(item);
