@@ -13,7 +13,7 @@ import {useNavigate} from "react-router-dom";
 
 const Login =(props)=> {
   const navigate = useNavigate();
-  const { open, setOpen, setRegisterOpen } = props;
+  const { isLoginOpen, setIsLoginOpen, setIsRegisterOpen } = props;
   const [valid, setValid] = useState(false);
   const [validLength, setValidLength] = useState(true);
   const [error, setError] = useState(null);
@@ -23,9 +23,10 @@ const Login =(props)=> {
   useEffect(()=>{
     setError(null)
   },[error])
+  
   function handleOpen(event, reason) {
     if (reason === 'backdropClick') return;
-    setOpen(false);
+    setIsLoginOpen(false);
   }
 
   async function handleSubmit(event) {
@@ -62,7 +63,7 @@ const Login =(props)=> {
         Main.setUserId(userId);
         dispatch(setAuth(true))
         dispatch(setUser(userInfo));
-        setOpen(false)
+        setIsLoginOpen(false)
         return
       }
       setError(errors);
@@ -91,7 +92,7 @@ const Login =(props)=> {
 
   return (
     <>
-    <Modal open={open} onClose={handleOpen} className={styles.modalContainer}>
+    <Modal open={isLoginOpen} onClose={handleOpen} className={styles.modalContainer}>
       <Box className={styles.container}>
         <header>
           <div className={styles.wrapper}>
@@ -104,7 +105,7 @@ const Login =(props)=> {
         </header>
         <div className={styles.content}>
 
-          <Button className={styles.facebookBtn} onClick={()=>{window.location.assign("https://www.facebook.com")}}>
+          {/* <Button className={styles.facebookBtn} onClick={()=>{window.location.assign("https://www.facebook.com")}}>
             <img src="https://mweb-cdn.karousell.com/build/fb-icon-3NjbluDsCk.svg" alt="facebook_icon" className={styles.btnImg}/>
             Log in with Facebook
           </Button>
@@ -112,7 +113,7 @@ const Login =(props)=> {
             <span></span>
             <span>or</span>
             <span></span>
-          </div>
+          </div> */}
           <AuthForm
             type="login"
             handleSubmit={handleSubmit}
@@ -120,8 +121,8 @@ const Login =(props)=> {
             valid={valid}
             validLength={validLength}
             error={error}
-            setOpen={setOpen}
-            setRegisterOpen={setRegisterOpen}
+            setIsLoginOpen={setIsLoginOpen}
+            setIsRegisterOpen={setIsRegisterOpen}
           />
           
         </div>

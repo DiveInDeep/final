@@ -30,9 +30,6 @@ const Home = () => {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
   const auth = useSelector((state) => state.app.auth)
   const user = useSelector((state) => state.app.user)
-  console.log("auth?", auth)
-  console.log("user?", user)
-  
 
   useEffect(() => {
     if (!auth) return;

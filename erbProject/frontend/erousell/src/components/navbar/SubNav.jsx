@@ -10,10 +10,8 @@ const SubNav = () => {
   const  navigate = useNavigate();
   const location = useLocation();
   const [ isSell, setIsSell ] = useState(false);
-  let sell = location.pathname.split('/')[1];
+  let sell = location.pathname.split('/')[1] || "";
   
-  console.log("this is location", location.pathname.split('/')[1])
-
   useEffect(() => {
     if(!location.pathname) return;
     if (sell === 'sell') {
@@ -73,9 +71,6 @@ const SubNav = () => {
           </Container>
         )
       }
-      <Drawer>
-        hihi
-      </Drawer>
     </div>
   )
 };

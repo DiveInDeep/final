@@ -12,7 +12,7 @@ import * as service from '../../core/Service.js';
 
 
 const Register =(props)=> {
-  const { open, setOpen,setLoginOpen } = props;
+  const { isRegisterOpen, setIsRegisterOpen, setIsLoginOpen } = props;
   const [valid, setValid] = useState(false);
   const [validLength, setValidLength] = useState(true);
   const [validPassword, setValidPassword] = useState(true);
@@ -20,7 +20,7 @@ const Register =(props)=> {
   function handleOpen(event, reason) {
     console.log('reason', reason)
     if (reason === 'backdropClick') return;
-    setOpen(false);
+    setIsRegisterOpen(false);
   }
 
   async function handleSubmit(event) {
@@ -44,9 +44,9 @@ const Register =(props)=> {
       // let resp = await axios.post(API_URL+"/register",postObj);
       let resp = await service.call('post', '/users/register', postObj)
       if (resp.success) {
-        setOpen(false);
+        setIsRegisterOpen(false);
       }
-      if (resp.data.success){setOpen(false)}
+      if (resp.data.success){setIsRegisterOpen(false)}
       console.log('resp', resp)
     } catch(err) {
       window.alert(err.response.data);//error message
@@ -84,7 +84,7 @@ const Register =(props)=> {
 
   return (
     <>
-    <Modal open={open} onClose={handleOpen} className={styles.modalContainer}>
+    <Modal open={isRegisterOpen} onClose={handleOpen} className={styles.modalContainer}>
       <Box className={styles.container}>
         <header>
           <div className={styles.wrapper}>
@@ -112,8 +112,8 @@ const Register =(props)=> {
             valid={valid}
             validPassword={validPassword}
             validLength={validLength}
-            setOpen={setOpen}
-            setLoginOpen={setLoginOpen}
+            setIsRegisterOpen={setIsRegisterOpen}
+            setLoginOpen={setIsLoginOpen}
           />
           
         </div>

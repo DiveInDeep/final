@@ -16,7 +16,6 @@ const RecommendedGoods = () => {
   async function fetchAllItem() {
     try {
       let resp = await service.call('get', '/items/records/all');
-      console.log('this is get all :',  resp);
       const { success, records } = resp;
       if (success) {
         setResult(records);
