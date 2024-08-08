@@ -93,10 +93,19 @@ export const getSearch = (req, res) => {
   Item.find(obj)
     .lean()
     .sort({ date: "desc" })
-    .then((items) => {
-      console.log(items);
+    .then(async (items) => {
+      console.log({items});
+      const records = [];
+
+      for (const record of items) {
+        const filePath = `./uploads/${record.imagePath}`;
+        const data = await fs.promises.readFile(filePath);
+        const base64Data = Buffer.from(data).toString("base64");
+        record.img = `data:image/jpeg;base64,${base64Data}`;
+        records.push(record);
+      }
       let rtn = {
-        items: items,
+        items: records,
       };
       res.status(200).json(rtn);
     })
@@ -158,7 +167,12 @@ export const getItems = (req, res) => {
 //Get item
 export const getItem = async (req, res) => {
   let rtn = {};
-  rtn.item = await Item.findOne({ _id: { $eq: req.params.id } });
+  let item = await Item.findOne({ _id: { $eq: req.params.id } });
+  const filePath = `./uploads/${item.imagePath}`;
+  const data = await fs.promises.readFile(filePath);
+  const base64Data = Buffer.from(data).toString("base64");
+  const img = `data:image/jpeg;base64,${base64Data}`;
+  rtn.item = { ...item._doc, img };
   if (!rtn.item) {
     rtn.errors = "No item found";
     res.status(200).json(rtn);
@@ -380,47 +394,53 @@ export const deleteItem = (req, res) => {
     });
 };
 
-export const getRecords = (req, res) => {
-  //mongo db operators
-  Item.aggregate([
-    {
-      $lookup: {
-        from: "users",
-        localField: "seller",
-        foreignField: "_id",
-        as: "userInfo",
+export const getRecords = async (req, res) => {
+  try {
+    const recordsDB = await Item.aggregate([
+      {
+        $lookup: {
+          from: "users",
+          localField: "seller",
+          foreignField: "_id",
+          as: "userInfo",
+        },
       },
-    },
-    {
-      $unwind: {
-        path: "$userInfo",
-        preserveNullAndEmptyArrays: true,
+      {
+        $unwind: {
+          path: "$userInfo",
+          preserveNullAndEmptyArrays: true,
+        },
       },
-    },
-    {
-      $sort: {
-        date: -1,
+      {
+        $sort: {
+          date: -1,
+        },
       },
-    },
-  ])
-    .then((recordsDB) => {
-      // console.log(recordsDB[10]);
-      // res.render("ideas/records",{records: recordsDB});
-      let rtn = {
-        success: "Get success!",
-        records: recordsDB,
-      };
-      res.status(200).json(rtn);
-    })
-    .catch((err) => {
-      // req.flash("error_msg","No session");
-      // res.redirect("/users/login")
-      let rtn = {
-        errors: err,
-        success: null,
-      };
-      res.status(200).json(rtn);
-    });
+    ]);
+
+    const records = [];
+
+    for (const record of recordsDB) {
+      const filePath = `./uploads/${record.imagePath}`;
+      const data = await fs.promises.readFile(filePath);
+      const base64Data = Buffer.from(data).toString("base64");
+      record.img = `data:image/jpeg;base64,${base64Data}`;
+      records.push(record);
+    }
+    const VO = {
+      success: true,
+      message: "success",
+      data: records,
+    };
+
+    res.status(200).json(VO);
+  } catch (err) {
+    const rtn = {
+      errors: err,
+      success: null,
+    };
+    res.status(500).json(rtn);
+  }
 };
 
 export const newGetRecord = (req, res) => {
