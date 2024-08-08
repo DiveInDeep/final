@@ -44,7 +44,7 @@ const UploadItemFrom = (props) => {
       title: title,
 			description: desc,
       tag: [category],
-      // imagePath : "",
+      imagePath: imgPath.name,
       status: status,
       file:imgPath
     }
